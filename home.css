@@ -50,3 +50,65 @@ header {
 .d p{
     color: rgb(104, 103, 103);font-size: 22px;
 }
+
+.r{display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-right: 100px;
+padding: 25px;
+}
+#butoni{
+    background-color: rgb(236, 176, 65);
+    color: white;
+    width: 70px;
+    height: 50px;
+}
+.purple{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(119, 27, 97);
+    padding: 30px;
+}
+.healthy{
+   
+    
+    display: flex;
+    align-items: baseline;
+flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.back{
+    background-color: rgba(221, 227, 227, 0.801);
+}
+.soup{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 15px;
+  
+}
+.teksti{
+    padding: 10px;
+    background-color: white;
+width: 400px;
+}
+.bp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    background-color: rgb(119, 27, 97);
+    width: 180px;
+    height: 40px;
+    margin-top: 50px;
+}
+a{
+    text-decoration: none;
+}
