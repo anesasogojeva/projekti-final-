@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.navbar .hederi h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style:oblique;
+    color: rgb(224, 103, 103);
+    margin-left: 30px;
+}
+
+.navbar .hederi span{
+    color: grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.pjesa1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color:rgb(239, 239, 239);
+  background-color: rgb(233, 233, 233);
+}
+
+.d{
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  margin-right: 190px;
+}
+.d h1{
+  font-size:50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: rgb(224, 103, 103);
+}
+
+.d h4{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.d p{
+  color: rgb(104, 103, 103);font-size: 22px;
+}
+
+.f{
+    height: 600px; 
+    width: 390px;
+    margin-left: 120px;
+}
