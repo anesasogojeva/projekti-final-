@@ -131,3 +131,117 @@ header {
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 900px) {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+header span{
+    color: grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif'
+}
+.f{
+    height: 400px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+}
+    .a{
+        display: block;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-color:rgb(239, 239, 239);
+        background-color: rgb(233, 233, 233);
+    }
+
+    .a img {
+        transform: rotate(90deg);
+    }
+
+    .d{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    .purple{
+        display: block;
+        background-color: rgb(119, 27, 97);
+    }
+
+    .purple h1{
+        font-size: 30px;
+        margin-left: 30px;
+    }
+
+    .purple input{
+        width: 300px;
+        height: 30px;
+        margin-left: 30px;
+    }
+    
+
+    .healthy{
+        display: block;
+        align-items: baseline;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .back{
+        background-color: rgba(221, 227, 227, 0.801);
+        padding-top: 50px;
+    }
+
+    .soup{
+        display: block;
+        margin-top: 30px;
+    }
+
+    .soup img {
+        transform: rotate(90deg);
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        top: 50px;
+    }
+
+
+    #more {display: none;}
+
+
+    .teksti{
+        padding: 10px;
+        background-color: white;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .bp{
+        display: flex;
+        color: aliceblue;
+        background-color: rgb(119, 27, 97);
+        width: 180px;
+        height: 40px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    a{
+        text-decoration: none;
+    }
+
+}
