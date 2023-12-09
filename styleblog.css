@@ -1,0 +1,29 @@
+@import url(
+"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.navbar .hederi h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style:oblique;
+    color: rgb(224, 103, 103);
+    margin-left: 30px;
+}
+
+.navbar .hederi span{
+    color: grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.recipes-rating{
+    margin-bottom: 100px;
+    background-color: rgb(233, 233, 233);
+    padding-bottom: 80px;
+  }
+  
+  .recipes-rating .container {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .recipes-rating .title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 70%;
+    margin: 0 auto;
+  }
