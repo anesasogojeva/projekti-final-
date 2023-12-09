@@ -341,3 +341,59 @@ background-color: rgb(119, 27, 97);
     text-shadow:1px 1px 1px rgb(157, 10, 86),2px 2px 1px rgb(157, 10, 86);}
     .s p{margin-top: 40px;margin-left: 59px;margin-right: 59px;color: rgb(157, 10, 86);} 
 .s{display: flex;flex-direction: column;justify-content: center;align-items: center;} 
+@media(max-width:480px){
+  .card1, .card2, .card3, .card4, .card5 {
+    height: 200px;
+    background-size: contain;
+  }
+  .card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover {
+    flex: 1;
+  }
+  .item{
+    grid-template-columns: 1fr;
+  }
+  .contact{
+    display: none;
+  }
+  .text{
+    font-size:20px;  
+    text-align: center;
+  }
+.btn{
+  width: 20%;
+  height: 40px;
+  font-size: 12px;
+}
+.pjesa1{
+  display: block;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color:rgb(239, 239, 239);
+  background-color: rgb(233, 233, 233);
+}
+
+.pjesa1 img {
+  height: 300px;
+  width: 200px;
+}
+
+.d{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.d p{
+font-size: 40px;
+}
+article p {
+font-size:40px;
+color: rgb(255, 255, 255);
+}
+article h5, article h1 {
+font-size: 50px;
+font-weight: 600;
+}
+
+}
