@@ -158,5 +158,66 @@
        </div>
       </div>
 
+      <fieldset style="border-color: gray; background-color: rgb(241, 241, 241);">
+        <footer>
+        <div class="parafooter">
+          <div class="pinch">
+            <p>PINCH OF YUM</p><br>
+            <a href="">About</a><br>
+            <a href="">Blog</a><br>
+            <a href="">Recipe index</a><br>
+            <a href="">Contact</a><br>
+          </div>
+          <div class="pinch2">
+            <p>FOOD AND RECIPES</p><br>
+            <a href=""></a><br>
+            <a href=""></a><br>
+            <a href=""></a><br>
+            <a href=""></a><br>
+          </div>
+          <form class="logini">
+            <p id="parag">Sign up for email updates</p>
+                <label for="firstName"></label>
+                <input class="in" type="text" name="first name" placeholder="First Name" required id="firstName">
+                <label for="emaili"></label>
+                <input class="in" type="email" name="email" placeholder="Email" required id="emaili">
+                <button type="button" id="butoni" onclick="validateEmail()"><b>GO</b></button>
+            
+          </form>
+        
+      </div>
+        </div>
+        <div class="ft">
+          <div class="social-links" >
+            <ul class="social-media">
+                <li><a href=""><i class='bx bxl-facebook-square'></i></a></li>
+                <li><a href=""><i class='bx bxl-twitter' ></i></a></li>
+                <li><a href=""><i class='bx bxl-youtube'></i></a></li>
+                <li><a href=""><i class='bx bxl-instagram' ></i></a></li>
+            </ul>
+           </div>
+        <p style="margin-left: 20px;">© 2023 Pinch of Yum. All Rights Reserved. <br>A Raptive Partner Site.</p>
+        </div>
+        <p style="color: gray; text-align: center;">Privacy PolicyTerms</p>
+        </footer>
+    </fieldset>
+   
+  <script>
+      function validateEmail() {
+          const emailInput = document.getElementById('emaili');
+          const emailValue = emailInput.value;
+  
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+          if (!emailRegex.test(emailValue)) {
+              alert('Please enter a valid email address.');
+              emailInput.focus(); 
+          } else {
+              alert('Email submitted successfully!');
+          }
+      }
+  </script>
+  
+
 </body>
 </html>
