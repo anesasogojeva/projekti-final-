@@ -56,3 +56,49 @@
     width: 70%;
     margin: 0 auto;
   }
+  .rating-cards {
+    margin-bottom: 200px;
+  }
+  
+  .rating-cards .container {
+    display: flex;
+    margin-top: 40px;
+  }
+  
+  .rating-cards .top-title h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+  }
+  
+  .rating-cards .container .rating-card{
+    width: 30%;
+    margin-left: 3%;
+    display: flex;
+  }
+  
+  .rating-cards .container .rating-card img {
+    height: 125px;
+  }
+  
+  .rating-cards .container .rating-card .rating-txt {
+    margin-left: 5px;
+  }
+  
+  .rating-cards .container .rating-card .rating-txt h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .rating-cards .container .rating-card .rating-txt h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: bolder;
+    margin-top: 5px;
+  }
+  
+  .checked {
+    color: orange;
+  }
