@@ -198,3 +198,146 @@ background-color: rgb(119, 27, 97);
         font-weight: 500;
     }
    
+.co {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  .card1, .card2, .card3, .card4, .card5 {
+    flex: 1;
+    margin: 10px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: .3s all ease;
+  }
+  .card1 {
+    background-image: url(https://www.nutriphy.in/wp-content/uploads/2019/05/fi.jpeg);
+  }
+  
+  .card2 {
+    background-image: url(https://www.qantas.com/content/dam/travelinsider/images/explore/north-america/usa/hawaii/where-to-eat-in-kona/poke-hawaii-best-places-to-eat.jpg);
+  }
+  
+  .card3 {
+    background-image: url(https://static.wixstatic.com/media/0b0678_7f475048c2b246ce9df09e30557402bc~mv2.jpg/v1/fill/w_1500,h_1000,al_c,q_85/0b0678_7f475048c2b246ce9df09e30557402bc~mv2.jpg);
+  }
+  
+  .card4 {
+    background-image: url(https://therealfooddietitians.com/wp-content/uploads/2020/06/Thai-Peanut-Quinoa-Salad-9.jpg);
+  }
+  
+  .card5 {
+    background-image: url(https://healthywithnedi.com/wp-content/uploads/2020/04/mushroom.jpg);
+  }
+  .card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover {
+    flex: 2;
+    background-color: rgb(255, 255, 255);
+  }
+  .co a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    font-style:oblique ;
+  }
+ 
+
+ article img {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 50%;
+    border: 3px solid rgb(119, 27, 97);
+  }
+   
+  .parasection {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  
+  .section {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://www.mediabistro.com/wp-content/uploads/2016/10/communications-manager-do.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5%;
+    border-radius: 40px;
+  }
+  
+  .section2 {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5%;
+    border-radius: 5%;
+  }
+  
+  .section3 {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("http://t-kitchens.com/wp-content/uploads/2020/08/Kitchen01.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5%;
+    border-radius: 5%;
+  }
+  
+  .hero {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+  }
+  
+  article h1 {
+    font-size: 5vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(181, 121, 167);
+  }
+  
+  article h1::after {
+    content: "";
+    height: 3px;
+    width: 30vw;
+    background-color: rgba(255, 182, 36, 0.99);
+    display: block;
+    margin: auto;
+  }
+  
+  content {
+    font-size: 1.7vw;
+    color: #ccccccfe;
+    line-height: 1.5;
+  }
+  
+  article h5 {
+    text-transform: uppercase;
+    font-size: 3.2vw;
+    font-weight: 500;
+    margin-top: 2.5vw;
+    color: rgb(181, 121, 167);
+  }
+  
+  article p {
+    font-size: 1.8vw;
+    color: rgb(255, 255, 255);
+  }
+  
+  form {
+    margin-left: 15px;
+  }
+  
+   .s h1 {
+    color: rgb(224, 103, 103);
+    text-shadow:1px 1px 1px rgb(157, 10, 86),2px 2px 1px rgb(157, 10, 86);}
+    .s p{margin-top: 40px;margin-left: 59px;margin-right: 59px;color: rgb(157, 10, 86);} 
+.s{display: flex;flex-direction: column;justify-content: center;align-items: center;} 
