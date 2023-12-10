@@ -250,7 +250,7 @@ background-color: rgb(119, 27, 97);
     margin: auto;
     margin-top: 40px;
     border-radius: 50%;
-    border: 3px solid rgb(119, 27, 97);
+    border: 3px solid rgba(255, 182, 36, 0.99);
   }
    
   .parasection {
@@ -337,9 +337,9 @@ background-color: rgb(119, 27, 97);
   }
   
    .s h1 {
-    color: rgb(224, 103, 103);
-    text-shadow:1px 1px 1px rgb(157, 10, 86),2px 2px 1px rgb(157, 10, 86);}
-    .s p{margin-top: 40px;margin-left: 59px;margin-right: 59px;color: rgb(157, 10, 86);} 
+    color: rgb(172, 104, 156);
+    text-shadow:1px 1px 1px rgb(119, 27, 97),2px 2px 1px rgb(119, 27, 97);}
+    .s p{margin-top: 40px;margin-left: 59px;margin-right: 59px;color: rgb(119, 27, 97);} 
 .s{display: flex;flex-direction: column;justify-content: center;align-items: center;} 
 
 
@@ -450,7 +450,7 @@ footer {
             }
         }
  
-      @media(max-width:850px){
+      @media(max-width:900px){
         .item{
           grid-template-columns: 1fr;
         }
