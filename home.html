@@ -161,15 +161,20 @@
       </div>
       <div class="pinch2">
         <p>FOOD AND RECIPES</p><br>
-       
+       <a href=""></a>
+       <a href=""></a>
+       <a href=""></a>
+       <a href=""></a>
       </div>
-      <div class="contact-footer">
-        <p style="font-style: oblique; margin-bottom: 10px;">sing up for email updates</p>
-        <p><input style="margin-right: 5px;width:230px; height: 50px;" type="text"name="first name"placeholder="First Name">
-          <input style="margin-right: 5px;width:230px; height: 50px;"type="text"name="last name"placeholder="Email">
-          <button id="butoni"><b>GO</b></button></p>
-      </div>
-  </div>
+      <form class="logini">
+        <p id="parag">Sign up for email updates</p>
+            <label for="firstName"></label>
+            <input class="in" type="text" name="first name" placeholder="First Name" required id="firstName">
+            <label for="emaili"></label>
+            <input class="in" type="email" name="email" placeholder="Email" required id="emaili">
+            <button type="button" id="butoni" onclick="validateEmail()"><b>GO</b></button>
+        
+      </form>
     </div>
     <div class="ft">
       <div class="social-links" >
@@ -184,6 +189,22 @@
     </div>
     <p class="privacy-policy" style="color: gray; text-align: center;">Privacy Policy Terms</p>
   </footer>
+
+  <script>
+    function validateEmail() {
+        const emailInput = document.getElementById('emaili');
+        const emailValue = emailInput.value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailValue)) {
+            alert('Please enter a valid email address.');
+            emailInput.focus(); 
+        } else {
+            alert('Email submitted successfully!');
+        }
+    }
+</script>
 
 
 </body>
