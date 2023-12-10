@@ -24,89 +24,91 @@
     from {opacity: .4}
     to {opacity: 1}
   }
-  .ft .links {
-    margin-left: 50px;
-  }
-  
-  .ft .links a {
+.links {
+    display: block;
+    justify-content: baseline;
+
+}
+
+.links a {
     color: black;
     margin-left: 10px;
-  }
+}
   
-  .privacy-policy{
+.privacy-policy{
     margin-top: 30px;
     margin-bottom: 30px;
-  }
+}
   
-  .card{
+.card{
     margin-left: 30px;
-  } 
+} 
 .recipes-rating{
     margin-bottom: 100px;
     background-color: rgb(233, 233, 233);
     padding-bottom: 80px;
-  }
+}
   
-  .recipes-rating .container {
+.recipes-rating .container {
     width: 70%;
     margin: 0 auto;
-  }
-  .recipes-rating .title {
+}
+.recipes-rating .title {
     padding-top: 50px;
     padding-bottom: 50px;
     width: 70%;
     margin: 0 auto;
-  }
-  .rating-cards {
+}
+.rating-cards {
     margin-bottom: 200px;
-  }
+}
   
-  .rating-cards .container {
+.rating-cards .container {
     display: flex;
     margin-top: 40px;
-  }
+}
   
-  .rating-cards .top-title h1 {
+.rating-cards .top-title h1 {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 100px;
-  }
+}
   
-  .rating-cards .container .rating-card{
+.rating-cards .container .rating-card{
     width: 30%;
     margin-left: 3%;
     display: flex;
-  }
+}
   
-  .rating-cards .container .rating-card img {
+.rating-cards .container .rating-card img {
     height: 125px;
-  }
+}
   
-  .rating-cards .container .rating-card .rating-txt {
+.rating-cards .container .rating-card .rating-txt {
     margin-left: 5px;
-  }
+}
   
-  .rating-cards .container .rating-card .rating-txt h3 {
+.rating-cards .container .rating-card .rating-txt h3 {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
-  }
+}
   
-  .rating-cards .container .rating-card .rating-txt h4 {
+.rating-cards .container .rating-card .rating-txt h4 {
     font-size: 14px;
     text-transform: uppercase;
     color: gray;
     font-weight: bolder;
     margin-top: 5px;
-  }
+}
   
-  .checked {
+.checked {
     color: orange;
-  }
-  .parafooter {
+}
+.parafooter {
     margin-top: 100px;
-  }
-  .parafooter{
+}
+.parafooter{
     display: flex;
     justify-content: space-between;
 }
@@ -154,11 +156,25 @@ footer{
      padding: 0;
      box-sizing: border-box;
     }
-    .ft .links {
-        margin-left: 50px;
-      }
-      
-    .ft .links a {
+    .navbar .hederi h1{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style:oblique;
+        color: rgb(224, 103, 103);
+        margin-left: 30px;
+    }
+    
+    .navbar .hederi span{
+        color: grey;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .links {
+        display: block;
+        justify-content: baseline;
+    
+    }
+    
+    .links a {
         color: black;
         margin-left: 10px;
     }
@@ -171,7 +187,7 @@ footer{
         margin-bottom: 100px;
         background-color: rgb(233, 233, 233);
         padding-bottom: 80px;
-      }
+    }
       
       
     .recipes-rating .container{
@@ -198,36 +214,140 @@ footer{
       
     }
       
-      .rating-cards .container .rating-card img {
+    .rating-cards .container .rating-card img {
         height: 125px;
-      }
+    }
       
-      .rating-cards .container .rating-card .rating-txt {
+    .rating-cards .container .rating-card .rating-txt {
         margin-left: 5px;
-      }
+    }
       
-      .rating-cards .container .rating-card .rating-txt h3 {
+    .rating-cards .container .rating-card .rating-txt h3 {
         font-size: 16px;
         text-transform: uppercase;
         font-weight: bold;
-      }
+    }
       
-      .rating-cards .container .rating-card .rating-txt h4 {
+    .rating-cards .container .rating-card .rating-txt h4 {
         font-size: 14px;
         text-transform: uppercase;
         color: gray;
         font-weight: bolder;
         margin-top: 5px;
-      }
+    }
       
-      .checked {
+    .checked {
         color: orange;
-      }
+    }
       
-      .parafooter {
+    .parafooter {
         margin-top: 100px;
-      }
+    }
       
+}
+@media only screen and (max-width: 900px) { 
+
+    *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+    .navbar .hederi h1{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style:oblique;
+        color: rgb(224, 103, 103);
+        margin-left: 30px;
+    }
+    
+    .navbar .hederi span{
+        color: grey;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .prev, .next {
+        display: none;
+    }
+       
+      
+    .links {
+        display: block;
+        justify-content: baseline;
+    
+    }
+    
+    .links a {
+        color: black;
+        margin-left: 10px;
+    }
+      
+    .privacy-policy{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+      
+      
+      
+    .recipes-rating{
+        margin-bottom: 100px;
+        background-color: rgb(233, 233, 233);
+        padding-bottom: 80px;
+    }
+      
+      
+    .recipes-rating .container{
+        display: block !important;
+    }
+      
+      
+      
+    .rating-cards .container {
+        display: block;
+        margin-top: 40px;
+    }
+      
+    .rating-cards .top-title h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+      
+    .rating-cards .container .rating-card{
+        width: 30%;
+        margin: 0 auto;
+        display: block;
+        padding-bottom: 40px;
+      
+    }
+      
+    .rating-cards .container .rating-card img {
+        height: 125px;
+    }
+      
+    .rating-cards .container .rating-card .rating-txt {
+        margin-left: 5px;
+    }
+      
+    .rating-cards .container .rating-card .rating-txt h3 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+      
+    .rating-cards .container .rating-card .rating-txt h4 {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: gray;
+        font-weight: bolder;
+        margin-top: 5px;
+    }
+      
+    .checked {
+        color: orange;
+    }
+      
+    .parafooter {
+        margin-top: 100px;
+    }
 }
     .links {
         margin-left: 650px;
