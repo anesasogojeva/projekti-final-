@@ -279,19 +279,15 @@ footer {
     a {
         text-decoration: none;
     }
-
     .parafooter {
-        display: block;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-
-    .pinch {
-        display: block;
-
-    }
-
-    .parafooter a {
-        text-decoration: none;
-        color: rgb(113, 110, 110);
+  
+    .pinch,
+    .pinch2 {
+        margin-bottom: 20px; 
     }
 
     .pinch2 {
@@ -299,16 +295,22 @@ footer {
         flex-direction: column;
 
     }
-
     footer {
-        margin-left: 130px;
-        margin-right: 50px;
-        margin-top: 30px;
+        margin: 0; 
     }
-
+  
     .ft {
-        display: block;
-        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .logini {
+        margin: 0 10px;
+    }
+  
+    .in {
+        width: 100%; 
+        margin-bottom: 10px;
     }
 
     .purple {
@@ -469,7 +471,10 @@ footer {
     #more {
         display: none;
     }
-
+    .in {
+        width: 100%;
+        margin-right: 0;
+      }
 
     .teksti {
         padding: 10px;
