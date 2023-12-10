@@ -124,15 +124,15 @@
   <h2 style="text-align: center; color: rgb(119, 27, 97); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Vegetarian Recipes</h2>
     <div class="healthy">
       <div class="soup">
-        <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/vegetarian-shepherds-pie-1365x2048.jpg" alt=""><div class="teksti"><h2>Vegetarian Shepherd’s Pie</h2>
+        <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/vegetarian-shepherds-pie-1365x2048.jpg" alt=""><div class="teksti"><h2>Vegetarian Shepherd’s Pie with sesame</h2>
           <p>Meal Prep Sesame Noodle Bowls! Fork-twirly noodles, an easy creamy sesame sauce, perfect browned chicken, and all the veg. YUM</p><br>
           <a href="./recipes/recipes.html#8-recipe"><button class="bp">MAKE THIS RECIPE</button></a> 
           </div>
       </div>
       <div  class="soup">
         <img style="width: 200px;height: 300px;" src="https://i.pinimg.com/originals/45/72/f6/4572f6734d0a2ca0bb4b2dc6baca6c31.jpg" alt=""><div class="teksti">
-          <h2>15 Minute Lo Mein</h2>
-          <p>15 Minute Lo Mein! Made with just soy sauce, sesame oil, a pinch of sugar, ramen noodles or spaghetti noodles, and any veggies or protein you like. SO YUMMY!</p>
+          <h2>Vegetarisan 15 Minute Lo Mein</h2>
+          <p>15 Minute Lo Mein! Made with just soy sauce, sesame oil, ramen noodles or spaghetti noodles, and any veggies or protein you like. SO YUMMY!</p>
           <br>
           <a href="./recipes/recipes.html#9-recipe"><button class="bp">MAKE THIS RECIPE</button></a> 
         </div>
@@ -144,7 +144,7 @@
       </div></div>
       <div  class="soup">
         <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/Green-Curry-5.jpg" alt=""><div class="teksti"><h2>
-          5-Ingredient Green Curry</h2><p>Packed with tons of veggies, an easy green curry sauce,its also very healthy, and finished with golden raisins and cilantro.</p>
+          only 5-Ingredient Green Curry</h2><p>Packed with tons of veggies, an easy green curry sauce,its also very healthy, and finished with golden raisins and cilantro.</p>
        <br> <a href="./recipes/recipes.html#11-recipe"><button class="bp">MAKE THIS RECIPE</button></a> 
         </div>
       </div> 
@@ -154,22 +154,27 @@
     <div class="parafooter">
       <div class="pinch">
         <p>PINCH OF YUM</p><br>
-        <a href="https://pinchofyum.com/about">Aboutt</a><br>
-        <a href="https://pinchofyum.com/blog">Blog</a><br>
-        <a href="https://pinchofyum.com/blog">Recipe index</a><br>
-        <a href="https://pinchofyum.com/blog">Contact</a><br>
+        <a href="">Aboutt</a><br>
+        <a href="">Blog</a><br>
+        <a href="">Recipe index</a><br>
+        <a href="">Contact</a><br>
       </div>
       <div class="pinch2">
         <p>FOOD AND RECIPES</p><br>
-       
+       <a href=""></a>
+       <a href=""></a>
+       <a href=""></a>
+       <a href=""></a>
       </div>
-      <div class="contact-footer">
-        <p style="font-style: oblique; margin-bottom: 10px;">sing up for email updates</p>
-        <p><input style="margin-right: 5px;width:230px; height: 50px;" type="text"name="first name"placeholder="First Name">
-          <input style="margin-right: 5px;width:230px; height: 50px;"type="text"name="last name"placeholder="Email">
-          <button id="butoni"><b>GO</b></button></p>
-      </div>
-  </div>
+      <form class="logini">
+        <p id="parag">Sign up for email updates</p>
+            <label for="firstName"></label>
+            <input class="in" type="text" name="first name" placeholder="First Name" required id="firstName">
+            <label for="emaili"></label>
+            <input class="in" type="email" name="email" placeholder="Email" required id="emaili">
+            <button type="button" id="butoni" onclick="validateEmail()"><b>GO</b></button>
+        
+      </form>
     </div>
     <div class="ft">
       <div class="social-links" >
@@ -184,6 +189,22 @@
     </div>
     <p class="privacy-policy" style="color: gray; text-align: center;">Privacy Policy Terms</p>
   </footer>
+
+  <script>
+    function validateEmail() {
+        const emailInput = document.getElementById('emaili');
+        const emailValue = emailInput.value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailValue)) {
+            alert('Please enter a valid email address.');
+            emailInput.focus(); 
+        } else {
+            alert('Email submitted successfully!');
+        }
+    }
+</script>
 
 
 </body>
