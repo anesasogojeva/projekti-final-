@@ -67,7 +67,7 @@ header {
 }
 .purple input {
     width: 100%;
-    max-width: 300px; /* Adjust the maximum width as needed */
+    max-width: 300px; 
     padding: 8px;
     box-sizing: border-box;
     margin-bottom: 10px;
