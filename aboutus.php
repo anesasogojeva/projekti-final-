@@ -1,3 +1,33 @@
+<?php
+   session_start();
+  include("database.php");
+  if (isset($_POST["addMessagge"])) {
+
+    
+    $messagge = mysqli_real_escape_string($conn, $_POST["message"]);
+    $numri=6;
+    $id_perdoruesi =(int)$_SESSION["id"];
+    $insertQuery = "INSERT INTO mesazhet(messagge, id_perdoruesi) VALUES ('$messagge','$id_perdoruesi');";
+    
+    if ($conn->query($insertQuery)) {
+      $res = [
+          'status' => 200,
+          'message' => ('Mesazhi shkoj')
+      ];
+      echo json_encode($res);
+      return;
+  } else {
+      $res = [
+          'status' => 500,
+          'message' => ('Ndodhi nje gabim mesazhi nuk shkoj')
+      ];
+      echo json_encode($res);
+      return;
+  }
+  }
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,9 +111,12 @@
             </ul>
           </div>
         </div>
+
         <div class="submit-form">
           <h4 class="third-text">Contact us</h4>
-          <form action="" onsubmit="submitForm(event)">
+          <!--
+          <form action="aboutus.php" method="Post" id="addMessagge" onsubmit="submitForm.call(this, event)">
+            
             <div class="input-box">
               <input type="text" id="name" class="input" required>
               <label for="name">Name</label>
@@ -100,24 +133,83 @@
             </div>
 
             <div class="input-box">
-              <textarea name="" class="input" id="message" cols="30" rows="10" required></textarea>
+              <textarea name="" class="input" id="message" cols="25" rows="10" required></textarea>
               <label for="message">Message</label>
             </div>
-            <input type="submit" class="btn" style="background-color: white;" onmouseover="mOver(this)"
-              onmouseout="mOut(this)" value="Submit">
+          --comment-- <input type="submit" class="btn" style="background-color: white;" value="Submit1">  
+           
+            <button type="submit" class="btn btn-primary">ruaj</button>
+</form>
+            -->
+
+            <div id="errorMessage" class="alert alert-warning d-none"></div>
+            <form id="addMessagge" action="aboutus.php" method="post">
+            <div class="modal-body">
+              
+              <div class="input-box">
+                <textarea name="message" class="input" id="message" cols="25" rows="10" required></textarea>
+                <label for="message">Message</label>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+             
+              <button type="submit" class="btn">Sent</button>
+            </div>
           </form>
+
+
+
+
 
         </div>
       </div>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+  <script>
+    $(document).on('submit', '#addMessagge', function (e) {
+      e.preventDefault();
+
+
+      var formData = new FormData(this);
+      formData.append("addMessagge", true);
+
+      $.ajax({
+        type: "POST",
+        url: "aboutus.php",
+        
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+          var res = jQuery.parseJSON(response);
+          if (res.status == 500) {
+            $('#errorMessage').removeClass('d-none');
+            $('#errorMessage').text(res.message);
+          } else if (res.status == 200) {
+            $('#errorMessage').addClass('d-none');
+            $('#message').val('');
+          }
+        }
+      });
+    });
+  </script>
+
+
+
   <script>
     function mOver(obj) {
       document.getElementById("f").style.color = "rgb(119, 27, 97)";
     }
 
-    function mOut(obj) {
-      document.getElementById("f").style.color = " #000";
+    function mOut(element) {
+      if (element && element.style) {
+        element.style.backgroundColor = "white";
+      }
     }
     function submitForm(event) {
       event.preventDefault();
