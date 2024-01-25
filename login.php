@@ -1,3 +1,62 @@
+<?php
+session_start();
+if (isset($_SESSION["admin"])) {
+    header("Location: zadduser.php");
+} else if (isset($_SESSION["logged"])) {
+    header("Location: home.php");
+}
+?>
+<?php
+if (isset($_POST["submit"])) {
+    $email = $_POST["email"];
+    $password = $_POST["psw"];
+    // Do not hash the password here; it should be hashed before comparing with the database
+}
+
+require_once("database.php");
+
+$sql = "SELECT password,roli,id FROM perdoruesit WHERE email='$email'";
+$record = $conn->query($sql);
+
+if ($record->num_rows > 0) {
+    while ($row = $record->fetch_assoc()) {
+
+        // Hash the user-entered password and compare with the hashed password in the database you created
+        if (password_verify($password, $row["password"])) {
+
+
+            session_start();
+            $_SESSION["logged"] = ["yes"];
+            /* Ading messagges*/  
+            $_SESSION["id"] = $row["id"];          
+            if ($row["roli"] == "admin") {
+                $_SESSION["admin"] = ["yes"];
+                header("Location: zadduser.php");
+                exit();       
+            }
+          
+            header("Location: home.php");
+            exit();
+
+
+
+        } else {
+
+            echo "<div class='alert alert-danger'>Nuk u lidh</div>";
+        }
+
+    }
+} else {
+    if (isset($_POST["submit"])) {
+        echo "<div class='alert alert-danger'>There are no such emails registered</div>";
+    }
+
+}
+
+$conn->close(); // Close the database connection
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,16 +226,27 @@
 
     <div class="main">
         <p class="sign" align="center">Sign in</p>
-        <form method="post" class="form1" onsubmit="return validation()">
-            <input class="un" id="email" type="email" align="center" placeholder="email">
+
+        <form method="post" class="form1" action="<?php echo htmlspecialchars($_SESSION["SELF"]); ?>"
+            onsubmit="return validation()">
+
+            <input class="un" id="email" name="email" type="email" align="center" placeholder="email">
             <span id="mail" class="text-danger font-weight-bold"></span>
-            <input class="pass" id="psw" type="password" align="center" placeholder="Password">
+
+            <input class="pass" id="psw" name="psw" type="password" align="center" placeholder="Password">
             <span id="pass" class="text-danger font-weight-bold"></span>
+
             <div class="buttons">
-                <a class="submit" align="center"><button type="submit"
+                <a class="submit" align="center"><button type="submit" name="submit" value="login"
                         style="background-color: #796f7e; border: none; color: white;">Login</button></a>
+
+                <!--<input type="submit" name="submit" value="login">-->
+
                 <a href="./register.html" class="submit" align="center">Register</a>
             </div>
+
+
+
             <p class="forgot" align="center"><a href="#">Forgot Password?</p>
         </form>
 
@@ -188,8 +258,8 @@
 
 
             var emailcheck = /.*@[a-z0-9.-]*/i;
-            var pswcheck = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})$/;
-
+            // var pswcheck = /^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20})$/;
+            var pswcheck = /^[A-Za-z0-9. ]{3,20}$/;
 
             if (emailcheck.test(email)) {
                 document.getElementById('mail').innerHTML = "";
@@ -209,7 +279,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <p></p>
+    <p></p>
+
+
+
 
 
 
