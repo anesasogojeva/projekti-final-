@@ -21,7 +21,7 @@ $record = $conn->query($sql);
 if ($record->num_rows > 0) {
     while ($row = $record->fetch_assoc()) {
 
-        // Hash the user-entered password and compare with the hashed password in the database you created
+        // Hash the user-entered password and compare with the hashed password in the database
         if (password_verify($password, $row["password"])) {
 
 
