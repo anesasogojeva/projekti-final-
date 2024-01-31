@@ -36,7 +36,7 @@
         </div>
       </nav>
 
-      <section class="recipes-rating">
+      <section class="recipes-rating ">
         <div class="title container">
           <div class="title">
             <h3>Pinch of yum</h3>
