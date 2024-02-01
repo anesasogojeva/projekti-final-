@@ -144,6 +144,9 @@ if (!isset($_SESSION["admin"])) {
                                 data-bs-target="#addUserModal">
                                 AddUser
                             </button>
+                            <a href="mesazhet.php" class="btn btn-primary btn-sm float-end mx-1">Mesazhet</a>
+                            <a href="stafi.php" class="btn btn-primary btn-sm float-end mx-1">Stafi</a>
+                            <a href="addRecipes.php" class="btn btn-primary btn-sm float-end mx-1">Receta</a>
                             <a href="home.php" class="btn btn-primary btn-sm float-end mx-1">Home</a>
                         </h4>
                     </div>
