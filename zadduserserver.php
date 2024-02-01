@@ -1,5 +1,9 @@
 <?php
 include("database.php");
+<<<<<<< HEAD
+=======
+
+>>>>>>> d9288e9a90a21fb11932921a5a49cc11d70dd52b
 if (isset($_POST["addUser"])) {
 
     $emri = mysqli_real_escape_string($conn, $_POST["emri"]);
