@@ -57,8 +57,7 @@ if (!isset($_SESSION["logged"])) {
 
           <form method="post" action="home.php">
             <li class="nav-item">
-              <button type="submit" name="logout" class="btn btn-link nav-link"
-             >Logout</button>
+              <button type="submit" name="logout" class="btn btn-link nav-link">Logout</button>
             </li>
           </form>
 
@@ -82,6 +81,9 @@ if (!isset($_SESSION["logged"])) {
     header("Location: login.php");
   }
   ?>
+
+
+
 
   <div class="a">
     <img class="f"
@@ -114,7 +116,46 @@ if (!isset($_SESSION["logged"])) {
     <h2
       style="text-align: center; color: rgb(119, 27, 97); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
       Healthy Recipes</h2>
+
     <div class="healthy">
+
+
+      <?php
+      include("database.php");
+      $sqlquery = "SELECT * FROM recepies ;";
+      $result = $conn->query($sqlquery);
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          ?>
+          <div class="soup">
+            <img style="width: 200px;height: 300px;" src="<?php echo $row['img']; ?>" alt="">
+            <div class="teksti">
+              <h2>
+                <?php echo $row['title']; ?>
+              </h2>
+              <p>
+                <?php echo $row['p1']; ?>
+              </p>
+              <br>
+              <a href="./recipes.php#<?php echo $row['id']; ?>-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
+            </div>
+          </div>
+          <?php
+        }
+      }
+      ?>
+
+
+
+
+
+
+
+
+
+
+
+<!--
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://i.pinimg.com/originals/a2/f4/0a/a2f40a197ca241a810613674bc8a757f.jpg" alt="">
@@ -126,6 +167,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#1-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/green-sauce-4.jpg"
           alt="">
@@ -137,6 +179,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#2-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://pinchofyum.com/wp-content/uploads/Sweet-Potato-Curry-3-2.jpg" alt="">
@@ -148,6 +191,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#3-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://allthehealthythings.com/wp-content/uploads/2020/04/img_5e9f4529c8edd.jpg" alt="">
@@ -158,11 +202,19 @@ if (!isset($_SESSION["logged"])) {
           <br> <a href="./recipes.html#4-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
-    </div>
+
+    -->
+      <!-- </div>  
+   
+   
     <h2 id="recipesmeal"
       style="text-align: center; color: rgb(119, 27, 97); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
       Meal Prep Recipes</h2>
     <div class="healthy">
+   -->
+
+
+   <!--
       <div class="soup">
         <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/sesame-noodles-8.jpg"
           alt="">
@@ -174,6 +226,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#5-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://www.simplyquinoa.com/wp-content/uploads/2022/01/spinach-and-egg-meal-prep-breakfast-sandwiches-8.jpg"
@@ -186,6 +239,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#6-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://pinchofyum.com/wp-content/uploads/Cauliflower-Fried-Rice-2-1.jpg" alt="">
@@ -197,6 +251,7 @@ if (!isset($_SESSION["logged"])) {
           <a href=""><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://pinchofyum.com/wp-content/uploads/Cilantro-Lime-Chicken-and-Lentils-1-2.jpg" alt="">
@@ -207,11 +262,19 @@ if (!isset($_SESSION["logged"])) {
           <br> <a href="./recipes.html#7-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
-    </div>
+    -->
+      <!--    </div>
+    
     <h2 id="recipesvegetarian"
       style="text-align: center; color: rgb(119, 27, 97); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
       Vegetarian Recipes</h2>
+
     <div class="healthy">
+-->
+
+
+
+<!--
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://pinchofyum.com/wp-content/uploads/vegetarian-shepherds-pie-1365x2048.jpg" alt="">
@@ -222,6 +285,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#8-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://i.pinimg.com/originals/45/72/f6/4572f6734d0a2ca0bb4b2dc6baca6c31.jpg" alt="">
@@ -233,6 +297,7 @@ if (!isset($_SESSION["logged"])) {
           <a href="./recipes.html#9-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;"
           src="https://cdn.copymethat.com/media/orig_date_night_mushroom_fettuccine_201807181457268134924368jz.jpg"
@@ -244,6 +309,7 @@ if (!isset($_SESSION["logged"])) {
           <br> <a href="./recipes.html#10-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+
       <div class="soup">
         <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/Green-Curry-5.jpg"
           alt="">
@@ -255,8 +321,12 @@ if (!isset($_SESSION["logged"])) {
           <br> <a href="./recipes.html#11-recipe"><button class="bp">MAKE THIS RECIPE</button></a>
         </div>
       </div>
+    -->
     </div>
   </div>
+
+
+
   <footer>
     <div class="parafooter">
       <div class="pinch">
