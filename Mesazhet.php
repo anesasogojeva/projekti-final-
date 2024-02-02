@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MESAZHET</title>
-   <link rel="stylesheet" href="dashstyle.css">
+    <link rel="stylesheet" href="dashstyle.css">
 </head>
 
 <body>
@@ -22,13 +22,8 @@
                        echo $_SESSION["id"];
 */
                             ?>
-                            <!--
-                            <button type="button" class="btn btn-primary btn-sm float-end mx-1" data-bs-toggle="modal"
-                                data-bs-target="#addUserModal">
-                                AddUser
-                            </button>
--->
                             <a href="zadduser.php" class="btn btn-primary btn-sm float-end mx-1">Kthehu</a>
+    
                         </h4>
                     </div>
                     <div class="card-body">
@@ -36,7 +31,6 @@
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-
                                     <th>#</th>
                                     <th>Mesazhi</th>
                                     <th>Perdoruesi</th>
@@ -46,46 +40,28 @@
                             </thead>
 
                             <tbody>
-
-
-
-
                                 <?php
                                 include("database.php");
                                 $sqlquery = "SELECT * FROM mesazhet";
                                 $result = $conn->query($sqlquery);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-
-                                        ?>
+                                ?>
                                         <tr>
+                                            <td><?php echo $row["id"] ?></td>
+                                            <td><?php echo $row["messagge"] ?></td>
+                                            <td><?php echo $row["id_perdoruesi"] ?></td>
+                                            <td><?php echo $row["koha"] ?></td>
                                             <td>
-                                                <?php echo $row["id"] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["messagge"] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["id_perdoruesi"] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row["koha"] ?>
-                                            </td>
-                                            <td>
-                                                <!--
-                                                <button type="button" id="editUser" value="<?= $row["id"]; ?>"
-                                                    class="editUserBtn btn btn-info btn-sm">Edito</button>  -->
-                                                <button type="button" id="deleteUser" value="<?= $row["id"]; ?>"
-                                                    class="deleteUsertBtn btn btn-danger btn-sm">Fshij</button>
+                                                <button type="button" class="deleteUsertBtn btn btn-danger btn-sm" data-id="<?= $row["id"]; ?>">Fshij</button>
                                             </td>
                                         </tr>
-                                        <?php
+                                <?php
                                     }
                                 }
                                 ?>
-                            <tbody>
+                            </tbody>
                         </table>
-
 
                     </div>
 
@@ -94,43 +70,32 @@
             </div>
 
         </div>
-
-
     </div>
-</body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<script>
-    $(document).on('click', '.deleteUsertBtn', function (e) {
-        e.preventDefault();
-
-        if (confirm("Are you sure you want to delete this data?")) {
-
-            var user_id = $(this).val();
-
-
-
-            $.ajax({
-                type: "POST",
-                url: "mesazhetServer.php",
-                data: {
-                    'delete_user': true,
-                    'user_id': user_id
-                },
-                success: function (response) {
-                    var res = jQuery.parseJSON(response);
-                    if (res.status == 500) {
-                        alert(res.message);
-                    } else {
-                        $('#myTable').load(location.href + " #myTable");
-                    }
+    <script>
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('deleteUsertBtn')) {
+                e.preventDefault();
+                if (confirm("Are you sure you want to delete this data?")) {
+                    var user_id = e.target.getAttribute('data-id');
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var res = JSON.parse(xhr.responseText);
+                            if (res.status == 500) {
+                                alert(res.message);
+                            } else {
+                                document.getElementById('myTable').innerHTML = xhr.responseText;
+                            }
+                        }
+                    };
+                    xhr.open("POST", "mesazhetServer.php", true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.send("delete_user=true&user_id=" + user_id);
                 }
-            });
-        }
-    });
+            }
+        });
+    </script>
 
-</script>
-
-</html>
+</body>
+    </html>

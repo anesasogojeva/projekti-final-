@@ -1,31 +1,31 @@
 <?php
-   session_start();
-  include("database.php");
-  if (isset($_POST["addMessagge"])) {
+session_start();
+include("database.php");
+if (isset($_POST["addMessagge"])) {
 
-    
-    $messagge = mysqli_real_escape_string($conn, $_POST["message"]);
-    $numri=6;
-    $id_perdoruesi =(int)$_SESSION["id"];
-    $insertQuery = "INSERT INTO mesazhet(messagge, id_perdoruesi) VALUES ('$messagge','$id_perdoruesi');";
-    
-    if ($conn->query($insertQuery)) {
-      $res = [
-          'status' => 200,
-          'message' => ('Mesazhi shkoj')
-      ];
-      echo json_encode($res);
-      return;
+
+  $messagge = mysqli_real_escape_string($conn, $_POST["message"]);
+  $numri = 6;
+  $id_perdoruesi = (int) $_SESSION["id"];
+  $insertQuery = "INSERT INTO mesazhet(messagge, id_perdoruesi) VALUES ('$messagge','$id_perdoruesi');";
+
+  if ($conn->query($insertQuery)) {
+    $res = [
+      'status' => 200,
+      'message' => ('Mesazhi shkoj')
+    ];
+    echo json_encode($res);
+    return;
   } else {
-      $res = [
-          'status' => 500,
-          'message' => ('Ndodhi nje gabim mesazhi nuk shkoj')
-      ];
-      echo json_encode($res);
-      return;
+    $res = [
+      'status' => 500,
+      'message' => ('Ndodhi nje gabim mesazhi nuk shkoj')
+    ];
+    echo json_encode($res);
+    return;
   }
-  }
-  ?>
+}
+?>
 
 
 <!DOCTYPE html>
@@ -142,10 +142,10 @@
 </form>
             -->
 
-            <div id="errorMessage" class="alert alert-warning d-none"></div>
-            <form id="addMessagge" action="aboutus.php" method="post">
+          <div id="errorMessage" class="alert alert-warning d-none"></div>
+          <form id="addMessagge" action="aboutus.php" method="post">
             <div class="modal-body">
-              
+
               <div class="input-box">
                 <textarea name="message" class="input" id="message" cols="25" rows="10" required></textarea>
                 <label for="message">Message</label>
@@ -153,7 +153,7 @@
             </div>
 
             <div class="modal-footer">
-             
+
               <button type="submit" class="btn">Sent</button>
             </div>
           </form>
@@ -181,7 +181,7 @@
       $.ajax({
         type: "POST",
         url: "aboutus.php",
-        
+
         data: formData,
         processData: false,
         contentType: false,
@@ -248,24 +248,37 @@
         from customer service, to social media, to videography, to assisting with recipe shoots. They are EVERYTHING.
       </p>
     </div>
-    <div class="section">
-      <div class="hero">
-        <article>
-          <h1>about anesa</h1>
-          <img src="https://i.pinimg.com/474x/98/80/ad/9880ad7ae4b10d721662eb7a392b371a--consultant-html.jpg" alt="Me">
-          <h5>Shefja 1</h5>
-          <p> Anesa is the Shoot Assistant at Pinch of Yum. You’ll find her in the kitchen supporting Lindsay on shoot
-            days, prepping and cooking recipes for the blog.
-            She is also the resident recipe tester, who tests and re-tests many recipes to ensure the best cooking
-            experience.
-            Anesa lives in Minnesota with her husband and 3 children. She also enjoys food photography and managing her
-            blog Destination Delish.</p>
-        </article>
-      </div>
-    </div>
   </div>
+
+  <?php
+  include("database.php");
+  $sqlquery = "SELECT * FROM stafi ;";
+  $result = $conn->query($sqlquery);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      ?>
+      <div class="parasection">
+        <div class="section2"
+          style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('<?php echo $row['b_url']?>');">
+          <div class="hero">
+            <article>
+              <h1><?php echo $row['header']?></h1>
+              <img src="<?php echo $row['i_url']?>" alt="Me">
+              <h5><?php echo $row['roli']?></h5>
+              <p> <?php echo $row['paragrafi']?></p>
+            </article>
+          </div>
+        </div>
+      </div>
+      <?php
+    }
+  }
+  ?>
+
+<!--
   <div class="parasection">
-    <div class="section2">
+    <div class="section2"
+      style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg');">
       <div class="hero">
         <article>
           <h1>about arta</h1>
@@ -284,7 +297,8 @@
 
 
   <div class="parasection">
-    <div class="section3">
+    <div class="section2"
+      style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg');">
       <div class="hero">
         <article>
           <h1>About Ramsay</h1>
@@ -299,6 +313,8 @@
     </div>
   </div>
 
+
+-->
   <fieldset class="b"></fieldset>
 
   <fieldset style="border-color: gray; background-color: rgb(241, 241, 241);">
