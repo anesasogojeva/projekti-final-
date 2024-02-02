@@ -278,7 +278,7 @@ if (!isset($_SESSION["admin"])) {
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
-    <script>
+    <!-- <script>
         $(document).on('submit', '#addStaf', function (e) {
             e.preventDefault();
 
@@ -407,8 +407,115 @@ if (!isset($_SESSION["admin"])) {
         });
 
 
-    </script>
+    </script> -->
+<script>
 
+    $(document).on('submit', '#addStaf', function (e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+    formData.append("addstaf", true);
+
+    $.ajax({
+        type: "POST",
+        url: "stafiServer.php",
+        data: formData,
+        processData: false,
+        contentType: false,
+
+        success: function (response) {
+            var res = jQuery.parseJSON(response);
+            if (res.status == 422) {
+                $('#errorMessage').removeClass('d-none');
+                $('#errorMessage').text(res.message);
+            } else if (res.status == 200) {
+                $('#errorMessage').addClass('d-none');
+                $('#addUserModal').modal('hide');
+                $('#addStaf')[0].reset();
+                $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
+            }
+        }
+    });
+});
+
+$(document).on('click', '.editUserBtn', function () {
+    var user_id = $(this).val();
+
+    $.ajax({
+        type: "GET",
+        url: "stafiServer.php?user_id=" + user_id,
+        success: function (response) {
+            var res = jQuery.parseJSON(response);
+            if (res.status == 404) {
+                alert(res.message);
+            } else if (res.status == 200) {
+                $('#user_id').val(res.data.id);
+                $('#b_urlEdit').val(res.data.b_url);
+                $('#headerEdit').val(res.data.header);
+                $('#i_urlEdit').val(res.data.i_url);
+                $('#roliEdit').val(res.data.roli);
+                $('#paragraphEdit').val(res.data.paragrafi);
+                $('#editUserModal').modal('show');
+            }
+        }
+    });
+});
+
+$(document).on('submit', '#editStaf', function (e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+    formData.append("editStaf", true);
+
+    $.ajax({
+        type: "POST",
+        url: "stafiServer.php",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            var res = jQuery.parseJSON(response);
+
+            if (res.status == 422) {
+                $('#errorMessageUpdate').removeClass('d-none');
+                $('#errorMessageUpdate').text(res.message);
+            } else if (res.status == 200) {
+                $('#errorMessageUpdate').addClass('d-none');
+                $('#editUserModal').modal('hide');
+                $('#editStaf')[0].reset();
+                $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
+            } else {
+                $('#errorMessageUpdate').text(res.message);
+            }
+        }
+    });
+});
+
+$(document).on('click', '.deleteUsertBtn', function (e) {
+    e.preventDefault();
+
+    if (confirm("Are you sure you want to delete this data?")) {
+        var user_id = $(this).val();
+
+        $.ajax({
+            type: "POST",
+            url: "stafiServer.php",
+            data: {
+                'delete_staf': true,
+                'user_id': user_id
+            },
+            success: function (response) {
+                var res = jQuery.parseJSON(response);
+                if (res.status == 500) {
+                    alert(res.message);
+                } else {
+                    $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
+                }
+            }
+        });
+    }
+});
+</script>
 
 
 </body>

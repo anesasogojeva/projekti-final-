@@ -190,7 +190,7 @@ if (!isset($_SESSION["admin"])) {
                         document.getElementById('errorMessage').classList.add('d-none');
                         closeModal(formId + 'Modal');
                         document.getElementById(formId).reset();
-                        location.reload(); // Reload the page or update the table as needed
+                        location.reload(); 
                     }
                 }
             };
@@ -229,7 +229,7 @@ if (!isset($_SESSION["admin"])) {
                         if (res.status == 500) {
                             alert(res.message);
                         } else {
-                            location.reload(); // Reload the page or update the table as needed
+                            location.reload();
                         }
                     }
                 };
