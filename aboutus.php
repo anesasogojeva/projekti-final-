@@ -43,7 +43,6 @@ if (isset($_POST["addMessagge"])) {
 </head>
 
 <body>
-<<<<<<< HEAD
 <nav class="navb"><h1> pinch <span>of </span> yum</h1>
     <div class="burger" onclick="toggleMenu()">
       <div class="line1"></div>
@@ -71,7 +70,6 @@ if (isset($_POST["addMessagge"])) {
           navLinks.classList.toggle('show');
       }
   </script>
-=======
   <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container hederi">
       <h1> pinch <span>of </span> yum</h1>
@@ -97,7 +95,6 @@ if (isset($_POST["addMessagge"])) {
       </div>
     </div>
   </nav>
->>>>>>> c006dcdf2ee04e622e5a512376dc04669cd83940
 
 
   <div class="pjesa1">
