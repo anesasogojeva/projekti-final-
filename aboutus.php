@@ -52,16 +52,16 @@ if (isset($_POST["addMessagge"])) {
         
           <ul  class="n" id="n">
             <li >
-              <a class="nav-link" href="">Home</a>
+              <a class="nav-link" href="./home.php">Home</a>
             </li>
             <li >
-              <a class="nav-link" href="">About</a>
+              <a class="nav-link" href="./aboutus.php">About</a>
             </li>
             <li >
-              <a class="nav-link" href="">Blog</a>
+              <a class="nav-link" href="./blog.php">Blog</a>
             </li>
             <li >
-              <a class="nav-link" href="">Recipes</a>
+              <a class="nav-link" href="./home.php#recipees">Recipes</a>
             </li>
           </ul>
     </nav> <script>
@@ -70,31 +70,7 @@ if (isset($_POST["addMessagge"])) {
           navLinks.classList.toggle('show');
       }
   </script>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container hederi">
-      <h1> pinch <span>of </span> yum</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="./home.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./aboutus.php">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./blog.php">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./home.php#recipees">Recipes</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
 
 
   <div class="pjesa1">

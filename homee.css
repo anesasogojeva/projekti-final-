@@ -58,6 +58,9 @@ nav a {
 .btnbutoni{
     background-color: #f8f9fa;
     color: #33333397;
+    border: none;
+    text-decoration: none;
+    font-size: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
