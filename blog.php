@@ -37,18 +37,18 @@
         .container.d-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px; /* Adjust the gap between flex containers */
-            justify-content: space-evenly; /* Space evenly between items */
+            gap: 10px; 
+            justify-content: space-evenly; 
         }
 
         .flex-container {
-            flex: 0 1 calc(33.33% - 10px); /* Set flex property for three containers per row */
-            max-width: calc(33.33% - 10px); /* Adjusted max-width for three containers per row */
+            flex: 0 1 calc(33.33% - 10px); 
+            max-width: calc(33.33% - 10px); 
         }
 
         .card {
             margin-bottom: 20px;
-            max-width: 300px; /* Adjusted max-width for larger horizontal size */
+            max-width: 300px; 
             width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -428,7 +428,6 @@
                 dots[slideIndex-1].className += " active";
               }
     </script>
-          <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
 
 </body>
 </html>

@@ -39,7 +39,7 @@ if (isset($_POST["addMessagge"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pinch of yum| About us</title>
   <link rel="stylesheet" href="aboutuss.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -377,9 +377,7 @@ if (isset($_POST["addMessagge"])) {
       }
     }
   </script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script> -->
+
 </body>
 
 </html>
