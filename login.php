@@ -73,8 +73,6 @@ $conn->close(); // Close the database connection
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="stylehhome.css">
         <title>Sign in</title>
         <style>
@@ -82,20 +80,56 @@ $conn->close(); // Close the database connection
                 background-color: rgb(233, 233, 233);
                 font-family: 'Ubuntu', sans-serif;
             }
-
-            .navbar .hederi h1 {
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                font-style: oblique;
-                color: rgb(224, 103, 103);
-                margin-left: 30px;
+            nav {
+                background-color: #f8f9fa;
+                padding: 10px 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
-            .navbar .hederi span {
+            nav h1 {
+                font-family: 'Georgia', 'Times New Roman', Times, serif;
+                font-style: oblique;
+                color: #e06767;
+                font-size: 40px;
+            }
+
+            nav span {
                 color: grey;
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
 
+            nav ul {
+                list-style: none;
+                display: flex;
+                margin-right: 20px;
+            }
 
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #33333397;
+                font-size: 16px;
+            }
+
+            .burger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+
+            .line1, .line2, .line3 {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 4px 0;
+            }
             .main {
                 background-color: #FFFFFF;
                 width: 400px;
@@ -189,7 +223,40 @@ $conn->close(); // Close the database connection
                 font-size: 12px;
                 box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
             }
-
+            @media(max-width:900px){
+        nav h1 {
+          margin-left: 0%;
+        }
+      .navb {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+        .n {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #f8f9fa;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      
+        .n.show {
+          display: flex;
+        }
+      
+        .burger {
+          display: flex;
+          flex-direction: column;
+        }
+      
+        nav ul {
+          flex-direction: column;
+          text-align: left;
+        }
+      
+        nav ul li {
+          margin: 10px 20px;
+        }
+    }
             @media (max-width: 600px) {}
 
             .main {
@@ -198,31 +265,33 @@ $conn->close(); // Close the database connection
         </style>
 
     </head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container hederi">
-            <h1> pinch <span>of </span> yum</h1>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./aboutus.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./home.html#recipees">Recipes</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav class="navb"><h1> pinch <span>of </span> yum</h1>
+    <div class="burger" onclick="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+  </div>
+        
+          <ul  class="n" id="n">
+            <li >
+              <a class="nav-link" href="./home.php">Home</a>
+            </li>
+            <li >
+              <a class="nav-link" href="./aboutus.php">About</a>
+            </li>
+            <li >
+              <a class="nav-link" href="./blog.php">Blog</a>
+            </li>
+            <li >
+              <a class="nav-link" href="./home.php#recipees">Recipes</a>
+            </li>
+          </ul>
+    </nav> <script>
+      function toggleMenu() {
+          const navLinks = document.querySelector('.n');
+          navLinks.classList.toggle('show');
+      }
+  </script>
 
     <div class="main">
         <p class="sign" align="center">Sign in</p>

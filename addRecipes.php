@@ -15,9 +15,7 @@ if (!isset($_SESSION["admin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Recepe</title>
     <link rel="stylesheet" href="dashstyle.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
-
+  
 </head>
 
 <body>
@@ -83,7 +81,7 @@ if (!isset($_SESSION["admin"])) {
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="closeRecipeButon" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
@@ -170,7 +168,7 @@ if (!isset($_SESSION["admin"])) {
                     <div class="card-header">
                         <h4>Recetat
 
-                            <button type="button" class="btn btn-primary btn-sm float-end mx-1" data-bs-toggle="modal"
+                            <button type="button" id="addRecipeButon" class="btn btn-primary btn-sm float-end mx-1" data-bs-toggle="modal"
                                 data-bs-target="#AddRecipeModal">
                                 Shto recete
                             </button>
@@ -213,7 +211,7 @@ if (!isset($_SESSION["admin"])) {
                                                 <?php echo $row["title"] ?>
                                             </td>
                                             <td>
-                                            <img src="<?php echo $row["img"] ?>" alt="Me"
+                                                <img src="<?php echo $row["img"] ?>" alt="Me"
                                                     style="max-height: 120px; width: auto; height: auto;">
                                             </td>
                                             <td>
@@ -256,163 +254,134 @@ if (!isset($_SESSION["admin"])) {
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
     <script>
-        $(document).on('submit', '#Addrecipe', function (e) {
-            e.preventDefault();
 
-            //this is used to get 
-            var formData = new FormData(this);
-            formData.append("addRecepe", true);
+        $(document).on('click', '#addRecipeButon', function (e) {
 
-            $.ajax({
-                type: "POST",
-                url: "addRecipesServer.php",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (response) {
+            $('#AddRecipeModal').show();
 
-                    var res = jQuery.parseJSON(response);
+
+        });
+
+        $(document).on('click', '#closeRecipeButon', function (e) {
+
+            $('#AddRecipeModal').hide();;
+
+
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('Addrecipe').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var formData = new FormData(this);
+                formData.append("addRecepe", true);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "addRecipesServer.php", true);
+                xhr.onload = function () {
+                    var res = JSON.parse(this.responseText);
                     if (res.status == 422) {
-
-                        //In case there is an error, show the comments
-                        $('#errorMessage').removeClass('d-none');
-                        $('#errorMessage').text(res.message);
+                        document.getElementById('errorMessage').classList.remove('d-none');
+                        document.getElementById('errorMessage').textContent = res.message;
                     } else if (res.status == 200) {
-                        //In case there isnt, remove the comments and reload the modal and table
-                        $('#errorMessage').addClass('d-none');
-                        $('#AddRecipeModal').modal('hide');
-                        $('#myTable').load(location.href + " #myTable");
-                       // $('#AddRecipe')[0].reset();
-
-                       $('#img').val("");
-                        $('#title').val("");
-                        $('#p1').val("");
-                        $('#p2').val("");
-                        $('#p3').val("");
-                        $('#ingredients').val("");
-               
-
+                        document.getElementById('errorMessage').classList.add('d-none');
+                        document.getElementById('AddRecipeModal').style.display = 'none';
+                        document.getElementById('myTable').innerHTML = res.updatedTableHTML;
+                        document.getElementById('img').value = "";
+                        document.getElementById('title').value = "";
+                        document.getElementById('p1').value = "";
+                        document.getElementById('p2').value = "";
+                        document.getElementById('p3').value = "";
+                        document.getElementById('ingredients').value = "";
                     }
-                }
-            });
-        });
-
-
-        $(document).on('click', '.editRecipeBtn', function (e) {
-            e.preventDefault();
-   
-
-            var recipe_id = $(this).val();
-
-
-            $.ajax({
-                type: "GET",
-                url: "addRecipesServer.php?recipe_id=" + recipe_id,
-
-                success: function (response) {
-                    var res = jQuery.parseJSON(response);
-                    if (res.status == 404) {
-     
-                        alert(res.message);
-                    } else if (res.status == 200) {
-
-                        $('#recipe_id').val(res.data.id);                      
-                        $('#imgEdit').val(res.data.img);
-                        $('#titleEdit').val(res.data.title);
-                        $('#p1Edit').val(res.data.p1);
-                        $('#p2Edit').val(res.data.p2);
-                        $('#p3Edit').val(res.data.p3);
-                        $('#ingredientsEdit').val(res.data.ingredients);
-                        $('#EditRecipeModal').modal('show');
-
-                    }
-                }
-
+                };
+                xhr.send(formData);
             });
 
-        });
+            document.addEventListener('click', function (event) {
+                if (event.target.classList.contains('editRecipeBtn')) {
+                    event.preventDefault();
 
-        $(document).on('submit', '#EditRecipe', function (e) {
-            e.preventDefault();
+                    var recipe_id = event.target.value;
 
-            
-            var formData = new FormData(this);
-            formData.append("EditRecipe", true);
-
-            $.ajax({
-                type: "POST",
-                url: "addRecipesServer.php",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (response) {
-
-                    var res = jQuery.parseJSON(response);
-                    if (res.status == 422) {
-                       
-                        //In case there is an error, show the comments
-                        $('#errorMessage').removeClass('d-none');
-                        $('#errorMessage').text(res.message);
-                    } else if (res.status == 200) {
-
-                       
-                        alert(res.message);
-                    
-                        
-                        //In case there isnt, remove the comments and reload the modal and table
-                        $('#errorMessage').addClass('d-none');
-                        $('#EditRecipeModal').modal('hide');
-                        $('#myTable').load(location.href + " #myTable");
-                        $('#AddRecipe')[0].reset();
-
-                    }
-                } 
-            });
-        });
-
-        
-        
-        $(document).on('click', '.deleteRecipeBtn', function (e) {
-            e.preventDefault();
-
-
-           
-            if (confirm("Are you sure you want to delete this data?")) {
-                var recipe_id = $(this).val();
-
-
-  
-                $.ajax({
-                    type: "POST",
-                    url: "addRecipesServer.php",
-                    data: {
-                        'deleteRecipe': true,
-                        'recipe_id': recipe_id
-                    },
-                    success: function (response) {
-
-                        var res = jQuery.parseJSON(response);
-                        if (res.status == 500) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", "addRecipesServer.php?recipe_id=" + recipe_id, true);
+                    xhr.onload = function () {
+                        var res = JSON.parse(this.responseText);
+                        if (res.status == 404) {
                             alert(res.message);
-                        } else {
-                            $('#myTable').load(location.href + " #myTable");
+                        } else if (res.status == 200) {
+                            document.getElementById('recipe_id').value = res.data.id;
+                            document.getElementById('imgEdit').value = res.data.img;
+                            document.getElementById('titleEdit').value = res.data.title;
+                            document.getElementById('p1Edit').value = res.data.p1;
+                            document.getElementById('p2Edit').value = res.data.p2;
+                            document.getElementById('p3Edit').value = res.data.p3;
+                            document.getElementById('ingredientsEdit').value = res.data.ingredients;
+                            document.getElementById('EditRecipeModal').style.display = 'block';
                         }
+                    };
+                    xhr.send();
+                }
+
+                if (event.target.id === 'addRecipeBtn') {
+                    document.getElementById('AddRecipeModal').style.display = 'block';
+                }
+            });
+
+            document.getElementById('EditRecipe').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var formData = new FormData(this);
+                formData.append("EditRecipe", true);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "addRecipesServer.php", true);
+                xhr.onload = function () {
+                    var res = JSON.parse(this.responseText);
+                    if (res.status == 422) {
+                        document.getElementById('errorMessage').classList.remove('d-none');
+                        document.getElementById('errorMessage').textContent = res.message;
+                    } else if (res.status == 200) {
+                        alert(res.message);
+                        document.getElementById('errorMessage').classList.add('d-none');
+                        document.getElementById('EditRecipeModal').style.display = 'none';
+                        document.getElementById('myTable').innerHTML = res.updatedTableHTML;
+                        document.getElementById('AddRecipe').reset();
                     }
-                });
-            }
+                };
+                xhr.send(formData);
+            });
+
+            document.addEventListener('click', function (event) {
+                if (event.target.classList.contains('deleteRecipeBtn')) {
+                    event.preventDefault();
+                    if (confirm("Are you sure you want to delete this data?")) {
+                        var recipe_id = event.target.value;
+
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("POST", "addRecipesServer.php", true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.onload = function () {
+                            var res = JSON.parse(this.responseText);
+                            if (res.status == 500) {
+                                alert(res.message);
+                            } else {
+                                document.getElementById('myTable').innerHTML = res.updatedTableHTML;
+                            }
+                        };
+                        xhr.send("deleteRecipe=true&recipe_id=" + recipe_id);
+                    }
+                }
+            });
         });
-
-
-
-
-
-
-
     </script>
+
 
 
 </body>
