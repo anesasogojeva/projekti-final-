@@ -55,16 +55,16 @@ if (isset($_POST["addMessagge"])) {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./home.html">Home</a>
+            <a class="nav-link" href="./home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./aboutus.html">About</a>
+            <a class="nav-link" href="./aboutus.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./blog.html">Blog</a>
+            <a class="nav-link" href="./blog.php">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./home.html#recipees">Recipes</a>
+            <a class="nav-link" href="./home.php#recipees">Recipes</a>
           </li>
         </ul>
       </div>
@@ -234,11 +234,11 @@ if (isset($_POST["addMessagge"])) {
   </script>
 
   <div class="co">
-    <div class="card1"><a href="./home.html#recipesmeal">Meal Recipes</a></div>
-    <div class="card2"><a href="./home.html#recipees">Healthy recipes</a></div>
-    <div class="card3"><a href="./blog.html#latest">Recently added</a></div>
-    <div class="card4"><a href="./home.html#recipesvegetarian">Vegetarian Recipes</a></div>
-    <div class="card5"><a href="./blog.html#top">Top Recipe</a></div>
+    <div class="card1"><a href="./home.php#recipesmeal">Meal Recipes</a></div>
+    <div class="card2"><a href="./home.php#recipees">Healthy recipes</a></div>
+    <div class="card3"><a href="./blog.php#latest">Recently added</a></div>
+    <div class="card4"><a href="./home.php#recipesvegetarian">Vegetarian Recipes</a></div>
+    <div class="card5"><a href="./blog.php#top">Top Recipe</a></div>
   </div>
 
   <div class="parasection">
@@ -322,10 +322,10 @@ if (isset($_POST["addMessagge"])) {
       <div class="parafooter">
         <div class="pinch">
           <p>PINCH OF YUM</p><br>
-          <a href="./home.html">Home</a><br>
-          <a href="./aboutus.html">About</a><br>
-          <a href="./blog.html">Blog</a><br>
-          <a href="./home.html#recipees">Recipes</a><br>
+          <a href="./home.php">Home</a><br>
+          <a href="./aboutus.php">About</a><br>
+          <a href="./blog.php">Blog</a><br>
+          <a href="./home.php#recipees">Recipes</a><br>
         </div>
         <div class="pinch2">
           <p>FOOD AND RECIPES</p><br>
@@ -334,7 +334,7 @@ if (isset($_POST["addMessagge"])) {
           <a href=""></a><br>
           <a href=""></a><br>
         </div>
-        <form class="logini">
+        <!-- <form class="logini">
           <p id="parag">Sign up for email updates</p>
           <label for="firstName"></label>
           <input class="in" type="text" name="first name" placeholder="First Name" required id="firstName">
@@ -342,7 +342,7 @@ if (isset($_POST["addMessagge"])) {
           <input class="in" type="email" name="email" placeholder="Email" required id="emaili">
           <button type="button" id="butoni" onclick="validateEmail()"><b>GO</b></button>
 
-        </form>
+        </form> -->
 
       </div>
       </div>
@@ -376,9 +376,9 @@ if (isset($_POST["addMessagge"])) {
       }
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
 </body>
 
 </html>
