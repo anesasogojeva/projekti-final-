@@ -11,56 +11,41 @@ if (!isset($_SESSION["logged"])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="homee.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Pinch of yum | home</title>
   <link rel="icon" href="c:\Users\sara\Pictures\Screenshots\Screenshot 2023-11-26 223231.png" type="image/x-icon">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container hederi">
-      <h1> pinch <span>of </span> yum</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./aboutus.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./blog.html">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#recipees">Recipes</a>
-          </li>
-          <!--
-          <li class="nav-item">
-            <a class="nav-link" href="#recipees">
-              <form action="home.php" method="post">
-                <input type="submit" name="logout" value="logout">
-              </form>
-            </a>
-          </li>
-
-        -->
-
-          <form method="post" action="home.php">
-            <li class="nav-item">
-              <button type="submit" name="logout" class="btn btn-link nav-link">Logout</button>
+<nav class="navb"><h1> pinch <span>of </span> yum</h1>
+    <div class="burger" onclick="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+  </div>
+        
+          <ul  class="n" id="n">
+            <li >
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <li >
+              <a class="nav-link" href="">About</a>
+            </li>
+            <li >
+              <a class="nav-link" href="">Blog</a>
+            </li>
+            <li >
+              <a class="nav-link" href="">Recipes</a>
+            </li>
+            <form method="post" action="home.php">
+            <li class="nav-link">
+              <button type="submit" name="logout" class="btnbutoni">Logout</button>
             </li>
           </form>
-
           <?php
           if (isset($_SESSION["admin"])) {
             // Display the "Admin" link only if the user is an admin
@@ -69,10 +54,14 @@ if (!isset($_SESSION["logged"])) {
             echo '</li>';
           }
           ?>
-        </ul>
-      </div>
-    </div>
-  </nav>
+          </ul>
+    </nav> <script>
+      function toggleMenu() {
+          const navLinks = document.querySelector('.n');
+          navLinks.classList.toggle('show');
+      }
+  </script>
+
 
   <?php
   if (isset($_POST["logout"])) {
