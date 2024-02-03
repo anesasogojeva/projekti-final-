@@ -39,17 +39,23 @@ if (!isset($_SESSION["admin"])) {
                             <label for="b_url">Background</label>
                             <input type="text" id="b_url" name="b_url" class="form-control">
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="b_url">Background</label>
                             <select name="b_url1" id="b_url1" class="form-control">
                                 <option value="">SELECT</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto1</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto2</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto3</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto1</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto2</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto3</option>
                             </select>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="header">Header</label>
                             <input type="text" id="header" name="header" class="form-control">
@@ -64,9 +70,15 @@ if (!isset($_SESSION["admin"])) {
                             <label for="b_url">Image</label>
                             <select name="i_url1" id="i_url1" class="form-control">
                                 <option value="">SELECT</option>
-                                <option value="https://www.2luxury2.com/wp-content/uploads/2022/11/las-vegas-harras-gordon-2022.jpg">Foto1</option>
-                                <option value="https://www.carvermostardi.com/cmos/wp-content/uploads/2018/05/professional_headshots_tampa_011.jpg">Foto2</option>
-                                <option value="https://i.pinimg.com/474x/98/80/ad/9880ad7ae4b10d721662eb7a392b371a--consultant-html.jpg">Foto3</option>
+                                <option
+                                    value="https://www.2luxury2.com/wp-content/uploads/2022/11/las-vegas-harras-gordon-2022.jpg">
+                                    Foto1</option>
+                                <option
+                                    value="https://www.carvermostardi.com/cmos/wp-content/uploads/2018/05/professional_headshots_tampa_011.jpg">
+                                    Foto2</option>
+                                <option
+                                    value="https://i.pinimg.com/474x/98/80/ad/9880ad7ae4b10d721662eb7a392b371a--consultant-html.jpg">
+                                    Foto3</option>
                             </select>
                         </div>
 
@@ -86,7 +98,8 @@ if (!isset($_SESSION["admin"])) {
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" id="editUserButton" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
                 </form>
@@ -114,14 +127,20 @@ if (!isset($_SESSION["admin"])) {
                             <label for="b_urlEdit">Background</label>
                             <input type="text" id="b_urlEdit" name="b_urlEdit" class="form-control">
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="b_urlEdit">Background</label>
                             <select name="b_urlEdit1" id="b_urlEdit1" class="form-control">
                                 <option value="">SELECT</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto1</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto2</option>
-                                <option value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">Foto3</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto1</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto2</option>
+                                <option
+                                    value="https://d2hg8ctx8thzji.cloudfront.net/expertopedia.net/wp-content/uploads/2020/09/CookingmadeeasywithWilliamsSonomarecipes.jpg">
+                                    Foto3</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -138,9 +157,15 @@ if (!isset($_SESSION["admin"])) {
                             <label for="i_urlEdit1">Image</label>
                             <select name="i_urlEdit1" id="i_urlEdit1" class="form-control">
                                 <option value="">SELECT</option>
-                                <option value="https://www.2luxury2.com/wp-content/uploads/2022/11/las-vegas-harras-gordon-2022.jpg">Foto1</option>
-                                <option value="https://www.carvermostardi.com/cmos/wp-content/uploads/2018/05/professional_headshots_tampa_011.jpg">Foto2</option>
-                                <option value="https://i.pinimg.com/474x/98/80/ad/9880ad7ae4b10d721662eb7a392b371a--consultant-html.jpg">Foto3</option>
+                                <option
+                                    value="https://www.2luxury2.com/wp-content/uploads/2022/11/las-vegas-harras-gordon-2022.jpg">
+                                    Foto1</option>
+                                <option
+                                    value="https://www.carvermostardi.com/cmos/wp-content/uploads/2018/05/professional_headshots_tampa_011.jpg">
+                                    Foto2</option>
+                                <option
+                                    value="https://i.pinimg.com/474x/98/80/ad/9880ad7ae4b10d721662eb7a392b371a--consultant-html.jpg">
+                                    Foto3</option>
                             </select>
                         </div>
 
@@ -185,13 +210,22 @@ if (!isset($_SESSION["admin"])) {
                             echo $_SESSION["id"];
 
                             ?>
-                            <button type="button" class="btn btn-primary btn-sm float-end mx-1" data-bs-toggle="modal"
-                                data-bs-target="#addUserModal">
+                            <button type="button" id="addUserButton" class="btn btn-primary btn-sm float-end mx-1"
+                                data-bs-toggle="modal" data-bs-target="#addUserModal">
                                 AddUser
                             </button>
-                            <a href="zadduser.php" class="btn btn-primary btn-sm float-end mx-1">Kthehu</a>
+                            
+                            <button type="button" class="btn btn-primary btn-sm float-end mx-1"
+                                onclick="openModal('#addUserModal')"><a href="zadduser.php"
+                                    class="btn btn-primary btn-sm float-end mx-1">Kthehu</a></button>
+
+
+
+
+
                         </h4>
                     </div>
+
                     <div class="card-body">
                         <table id="myTable" class="table table-bordered table-striped">
                             <thead>
@@ -274,11 +308,30 @@ if (!isset($_SESSION["admin"])) {
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+    <script>
 
-    <!-- <script>
+
+        $(document).on('click', '#addUserButton', function (e) {
+
+            $('#addUserModal').show();
+
+
+        });
+
+        $(document).on('click', '#editUserButton', function (e) {
+
+            $('#addUserModal').hide();;
+
+
+        });
+
+
+
+
+
         $(document).on('submit', '#addStaf', function (e) {
             e.preventDefault();
 
@@ -293,61 +346,51 @@ if (!isset($_SESSION["admin"])) {
                 contentType: false,
 
                 success: function (response) {
-                    var res = jQuery.parseJSON(response);
+                    var res = JSON.parse(response);
                     if (res.status == 422) {
                         $('#errorMessage').removeClass('d-none');
                         $('#errorMessage').text(res.message);
                     } else if (res.status == 200) {
                         $('#errorMessage').addClass('d-none');
-                        $('#addUserModal').modal('hide');
+                        $('#addUserModal').hide(); // Hide the modal without Bootstrap
                         $('#addStaf')[0].reset();
-                        $('#myTable').load(location.href + " #myTable");
-
+                        $('#myTable').load(' #myTable');
                     }
+                },
+                error: function (error) {
+                    console.log("Error:", error);
                 }
-
-
             });
         });
 
-
         $(document).on('click', '.editUserBtn', function () {
-
             var user_id = $(this).val();
 
             $.ajax({
                 type: "GET",
                 url: "stafiServer.php?user_id=" + user_id,
                 success: function (response) {
-
-                    var res = jQuery.parseJSON(response);
+                    var res = JSON.parse(response);
                     if (res.status == 404) {
-
                         alert(res.message);
                     } else if (res.status == 200) {
-
                         $('#user_id').val(res.data.id);
                         $('#b_urlEdit').val(res.data.b_url);
                         $('#headerEdit').val(res.data.header);
                         $('#i_urlEdit').val(res.data.i_url);
                         $('#roliEdit').val(res.data.roli);
                         $('#paragraphEdit').val(res.data.paragrafi);
-                        $('#editUserModal').modal('show');
-
-
+                        $('#editUserModal').show(); // Show the modal without Bootstrap
                     }
                 }
             });
-
         });
-
 
         $(document).on('submit', '#editStaf', function (e) {
             e.preventDefault();
 
             var formData = new FormData(this);
             formData.append("editStaf", true);
-
 
             $.ajax({
                 type: "POST",
@@ -356,30 +399,25 @@ if (!isset($_SESSION["admin"])) {
                 processData: false,
                 contentType: false,
                 success: function (response) {
-
-                    var res = jQuery.parseJSON(response);
+                    var res = JSON.parse(response);
 
                     if (res.status == 422) {
-
                         $('#errorMessageUpdate').removeClass('d-none');
                         $('#errorMessageUpdate').text(res.message);
-
                     } else if (res.status == 200) {
-
                         $('#errorMessageUpdate').addClass('d-none');
-                        $('#editUserModal').modal('hide');
+                        $('#editUserModal').hide(); // Hide the modal without Bootstrap
                         $('#editStaf')[0].reset();
-                        $('#myTable').load(location.href + " #myTable");
-
+                        $('#myTable').load(' #myTable');
                     } else {
                         $('#errorMessageUpdate').text(res.message);
                     }
-
+                },
+                error: function (error) {
+                    console.log("Error:", error);
                 }
             });
         });
-
-
 
         $(document).on('click', '.deleteUsertBtn', function (e) {
             e.preventDefault();
@@ -395,127 +433,21 @@ if (!isset($_SESSION["admin"])) {
                         'user_id': user_id
                     },
                     success: function (response) {
-                        var res = jQuery.parseJSON(response);
+                        var res = JSON.parse(response);
                         if (res.status == 500) {
                             alert(res.message);
                         } else {
-                            $('#myTable').load(location.href + " #myTable");
+                            $('#myTable').load(' #myTable');
                         }
+                    },
+                    error: function (error) {
+                        console.log("Error:", error);
                     }
                 });
             }
         });
+    </script>
 
-
-    </script> -->
-<script>
-
-    $(document).on('submit', '#addStaf', function (e) {
-    e.preventDefault();
-
-    var formData = new FormData(this);
-    formData.append("addstaf", true);
-
-    $.ajax({
-        type: "POST",
-        url: "stafiServer.php",
-        data: formData,
-        processData: false,
-        contentType: false,
-
-        success: function (response) {
-            var res = jQuery.parseJSON(response);
-            if (res.status == 422) {
-                $('#errorMessage').removeClass('d-none');
-                $('#errorMessage').text(res.message);
-            } else if (res.status == 200) {
-                $('#errorMessage').addClass('d-none');
-                $('#addUserModal').modal('hide');
-                $('#addStaf')[0].reset();
-                $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
-            }
-        }
-    });
-});
-
-$(document).on('click', '.editUserBtn', function () {
-    var user_id = $(this).val();
-
-    $.ajax({
-        type: "GET",
-        url: "stafiServer.php?user_id=" + user_id,
-        success: function (response) {
-            var res = jQuery.parseJSON(response);
-            if (res.status == 404) {
-                alert(res.message);
-            } else if (res.status == 200) {
-                $('#user_id').val(res.data.id);
-                $('#b_urlEdit').val(res.data.b_url);
-                $('#headerEdit').val(res.data.header);
-                $('#i_urlEdit').val(res.data.i_url);
-                $('#roliEdit').val(res.data.roli);
-                $('#paragraphEdit').val(res.data.paragrafi);
-                $('#editUserModal').modal('show');
-            }
-        }
-    });
-});
-
-$(document).on('submit', '#editStaf', function (e) {
-    e.preventDefault();
-
-    var formData = new FormData(this);
-    formData.append("editStaf", true);
-
-    $.ajax({
-        type: "POST",
-        url: "stafiServer.php",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (response) {
-            var res = jQuery.parseJSON(response);
-
-            if (res.status == 422) {
-                $('#errorMessageUpdate').removeClass('d-none');
-                $('#errorMessageUpdate').text(res.message);
-            } else if (res.status == 200) {
-                $('#errorMessageUpdate').addClass('d-none');
-                $('#editUserModal').modal('hide');
-                $('#editStaf')[0].reset();
-                $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
-            } else {
-                $('#errorMessageUpdate').text(res.message);
-            }
-        }
-    });
-});
-
-$(document).on('click', '.deleteUsertBtn', function (e) {
-    e.preventDefault();
-
-    if (confirm("Are you sure you want to delete this data?")) {
-        var user_id = $(this).val();
-
-        $.ajax({
-            type: "POST",
-            url: "stafiServer.php",
-            data: {
-                'delete_staf': true,
-                'user_id': user_id
-            },
-            success: function (response) {
-                var res = jQuery.parseJSON(response);
-                if (res.status == 500) {
-                    alert(res.message);
-                } else {
-                    $('#myTable').load(' #myTable'); // Reload only the content of the element with ID 'myTable'
-                }
-            }
-        });
-    }
-});
-</script>
 
 
 </body>
