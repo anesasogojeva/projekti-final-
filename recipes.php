@@ -13,30 +13,62 @@
     <header>
         <h1>Recipes</h1>
     </header>
-    <section id="1-recipe">
-        <div class="container">
-            <img style="width: 200px;height: 300px;"
-                src="https://i.pinimg.com/originals/a2/f4/0a/a2f40a197ca241a810613674bc8a757f.jpg" alt="">
-            <h2>The Best Detox Crockpot Lentil Soup</h2>
-            <p>Detox Crockpot Lentil Soup – a clean and simple soup made with onions, garlic, carrots, olive oil,
-                squash, and LENTILS! Super healthy and easy to make.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi adipisci, dolor tenetur neque
-                aperiam eaque dolorem! Perferendis maxime atque aliquid commodi ratione quisquam, quae doloremque
-                temporibus, laudantium ducimus suscipit.</p>
-            <ul>
-                <h3>Ingrudients</h3>
-                <li>lorem</li>
-                <li>Lorem Ipsum</li>
-                <li>Ipsum lorem</li>
-                <li>Lorem Lorem Lorem</li>
-            </ul>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, dicta iure! Quia, harum dolorum! Eius
-                molestiae quod iure placeat, ipsam animi eveniet natus cumque minus voluptate iste dolorum laboriosam
-                nulla.</p>
-            <button class="button-17" role="button"><a href="./home.html">Back home</a></button>
 
-        </div>
-    </section>
+
+    <?php
+    include("database.php");
+    $sqlquery = "SELECT * FROM recepies ;";
+    $result = $conn->query($sqlquery);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            ?>
+
+            <section id="<?php echo $row["id"]; ?>-recipe">
+                <div class="container">
+                    <img style="width: 200px;height: 300px;" src="<?php echo $row["img"]; ?>" alt="">
+                    <h2>
+                        <?php echo $row["title"]; ?>
+                    </h2>
+                    <p>
+                        <?php echo $row["p1"]; ?>
+                    </p>
+                    <p>
+                        <?php echo $row["p2"]; ?>
+                    </p>
+                    <ul>
+                        <h3>Ingrudients</h3>
+
+                        <ul>
+
+                        <li>j hghvg</li>
+                            <?php
+                            $array = explode(',', $row["ingredients"]);
+                            foreach ($array as $ingredient) {
+                                echo "<li>" . $ingredient . "</li>";
+                            }
+                            ?>
+
+                        </ul>
+                        <p>
+                            <?php echo $row["p3"]; ?>
+                        </p>
+                        <button class="button-17" role="button"><a href="./home.php">Back home</a></button>
+
+                </div>
+            </section>
+
+
+            <?php
+        }
+    }
+    ?>
+
+
+
+
+
+<!--
+    
     <section id="2-recipe">
         <div class="container">
             <img style="width: 200px;height: 300px;" src="https://pinchofyum.com/wp-content/uploads/green-sauce-4.jpg"
@@ -61,6 +93,7 @@
 
         </div>
     </section>
+    
     <section id="3-recipe">
         <div class="container">
             <img style="width: 200px;height: 300px;"
@@ -292,7 +325,7 @@
 
         </div>
     </section>
-
+-->
     <footer>
         <h3>Pinch of youm</h3>
     </footer>

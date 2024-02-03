@@ -21,6 +21,7 @@ if (!isset($_SESSION["logged"])) {
 </head>
 
 <body>
+<<<<<<< HEAD
 <nav class="navb"><h1> pinch <span>of </span> yum</h1>
     <div class="burger" onclick="toggleMenu()">
       <div class="line1"></div>
@@ -44,6 +45,43 @@ if (!isset($_SESSION["logged"])) {
             <form method="post" action="home.php">
             <li class="nav-link">
               <button type="submit" name="logout" class="btnbutoni">Logout</button>
+=======
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container hederi">
+      <h1> pinch <span>of </span> yum</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./aboutus.php">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./blog.php">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#recipees">Recipes</a>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link" href="#recipees">
+              <form action="home.php" method="post">
+                <input type="submit" name="logout" value="logout">
+              </form>
+            </a>
+          </li>
+
+        -->
+
+          <form method="post" action="home.php">
+            <li class="nav-item">
+              <button type="submit" name="logout" class="btn btn-link nav-link">Logout</button>
+>>>>>>> c006dcdf2ee04e622e5a512376dc04669cd83940
             </li>
           </form>
           <?php
@@ -320,10 +358,10 @@ if (!isset($_SESSION["logged"])) {
     <div class="parafooter">
       <div class="pinch">
         <p>PINCH OF YUM</p><br>
-        <a href="./home.html">Home</a><br>
-        <a href="./aboutus.html">About</a><br>
-        <a href="./blog.html">Blog</a><br>
-        <a href="./home.html#recipees">Recipes</a><br>
+        <a href="./home.php">Home</a><br>
+        <a href="./aboutus.php">About</a><br>
+        <a href="./blog.php">Blog</a><br>
+        <a href="./home.php#recipees">Recipes</a><br>
       </div>
       <div class="pinch2">
         <p>FOOD AND RECIPES</p><br>
@@ -332,7 +370,7 @@ if (!isset($_SESSION["logged"])) {
         <a href=""></a>
         <a href=""></a>
       </div>
-      <form class="logini">
+      <!-- <form class="logini">
         <p id="parag">Sign up for email updates</p>
         <label for="firstName"></label>
         <input class="in" type="text" name="first name" placeholder="First Name" required id="firstName">
@@ -340,7 +378,7 @@ if (!isset($_SESSION["logged"])) {
         <input class="in" type="email" name="email" placeholder="Email" required id="emaili">
         <button type="button" id="butoni" onclick="validateEmail()"><b>GO</b></button>
 
-      </form>
+      </form> -->
     </div>
     <div class="ft">
       <div class="social-links">
@@ -371,9 +409,9 @@ if (!isset($_SESSION["logged"])) {
       }
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
 
 </body>
 

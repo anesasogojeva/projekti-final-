@@ -20,16 +20,16 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="./home.html">Home</a>
+                <a class="nav-link" href="./home.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./aboutus.html">About</a>
+                <a class="nav-link" href="./aboutus.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./blog.html">Blog</a>
+                <a class="nav-link" href="./blog.php">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./home.html#recipees">Recipes</a>
+                <a class="nav-link" href="./home.php#recipees">Recipes</a>
               </li>
             </ul>
           </div>
@@ -304,10 +304,10 @@
             <div class="parafooter">
               <div class="pinch">
                 <p>PINCH OF YUM</p><br>
-                <a href="./home.html">Home</a><br>
-                <a href="./aboutus.html">About</a><br>
-                <a href="./blog.html">Blog</a><br>
-                <a href="./home.html#recipees">Recipes</a><br>
+                <a href="./home.php">Home</a><br>
+                <a href="./aboutus.php">About</a><br>
+                <a href="./blog.php">Blog</a><br>
+                <a href="./home.php#recipees">Recipes</a><br>
               </div>
               
               
@@ -355,7 +355,7 @@
                 dots[slideIndex-1].className += " active";
               }
     </script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
 
 </body>
 </html>
